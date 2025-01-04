@@ -32,7 +32,7 @@ public class List2 {
         double sum = 1;
         double term = 1;
 
-        for (int k = 1; k < n; k++) {
+        for (int k = 1; k <= n; k++) {
             term = term * (x / k);     //  term = x^k / k!
             sum += term;
         }
