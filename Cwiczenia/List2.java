@@ -26,14 +26,14 @@ public class List2 {
 
     //  --  ZADANIE 4   ------------------------------------------------------------------------------------------------
 
-    public static double evaluateFunction(int n, int x) {
+    public static double evaluateFunction(double n, double x) {
         if (n < 0) return Integer.MIN_VALUE;    //  Liczba wyrazów ciągu nie może być < 0
 
         double sum = 1;
         double term = 1;
 
         for (int k = 1; k < n; k++) {
-            term = term * ((double) x / k);     //  term = x^k / k!
+            term = term * (x / k);     //  term = x^k / k!
             sum += term;
         }
 
