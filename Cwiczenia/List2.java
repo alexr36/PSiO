@@ -2,31 +2,20 @@ public class List2 {
     //  --  ZADANIE 3   ------------------------------------------------------------------------------------------------
 
     public static int findMax(int[] ints) {
-        bubbleSort(ints);
-        return ints[0];         //  Lista powinna być posortowana malejąco
-    }
+        int max = ints[0];
 
-    //  Metoda do sortowania listy - pomocnicza do znajdowania maksymalnej w liście
-    private static void bubbleSort(int[] ints) {
-        for (int i = 0; i < ints.length - 1; i++) {
-            for (int j = 0; j < ints.length - i - 1; j++) {
-                if (ints[j] < ints[j + 1]) {
-                    swap(ints, j, j + 1);
-                }
+        for (int i = 1; i < ints.length; i++) {
+            if (max < ints[i]) {
+                max = ints[i];
             }
         }
-    }
 
-    //  Metoda pomocznicza do zamiany elementów o podanych indeksach miejscami
-    private static void swap(int[] ints, int i, int j) {
-        int temp = ints[i];
-        ints[i] = ints[j];
-        ints[j] = temp;
+        return max;
     }
 
     //  --  ZADANIE 4   ------------------------------------------------------------------------------------------------
 
-    public static double evaluateFunction(double n, double x) {
+    public static double evaluateFunction(int n, double x) {
         if (n < 0) return Integer.MIN_VALUE;    //  Liczba wyrazów ciągu nie może być < 0
 
         double sum = 1;
