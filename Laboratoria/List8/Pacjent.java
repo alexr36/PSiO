@@ -33,6 +33,8 @@ public class Pacjent extends Osoba {
 
     @Override
     public double Oblicz() {
+        if (appointments == null) return 0;
+
         double price = 0;
 
         for (int i = 0; i < n; i++) {
@@ -44,6 +46,8 @@ public class Pacjent extends Osoba {
 
 
     public void wyswietlWizyty() {
+        if (appointments == null) return;
+
         for (int i = 0; i < n; i++) {
             System.out.println(appointments[i]);
         }

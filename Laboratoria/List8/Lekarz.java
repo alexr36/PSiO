@@ -53,10 +53,7 @@ public class Lekarz extends Osoba {
 
 
     public void wyswietlLiczbePacjentow() {
-        if (t == null) {
-            System.out.println("No patients served.");
-            return;
-        }
+        if (t == null) return;
 
         for (int i = 0; i < t.length; i++) {
             System.out.println("Day " + (i + 1) + ", Patients: " + t[i]);
@@ -72,6 +69,8 @@ public class Lekarz extends Osoba {
     //  ==  Private methods ============================================================================================
 
     private void fillArray(int[] array) {
+        if (array == null) return;
+
         for (int i = 0; i < array.length; i++) {
             array[i] = rand.nextInt(RANGE_LOWER_BOUND, RANGE_UPPER_BOUND + 1);
         }
