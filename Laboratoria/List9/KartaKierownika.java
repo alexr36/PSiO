@@ -1,6 +1,8 @@
 package List9;
 
 public class KartaKierownika extends KartaPracownika {
+    //  ==  Constructors ===============================================================================================
+
     public KartaKierownika() {
         super();
     }
@@ -9,6 +11,9 @@ public class KartaKierownika extends KartaPracownika {
     public KartaKierownika(int numer, String nazwisko) {
         super(numer, nazwisko);
     }
+
+
+    //  ==  Public methods =============================================================================================
 
     @Override
     public double premia() {

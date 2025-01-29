@@ -3,11 +3,13 @@ package List9;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Random;
 
 public class Firma {
     private static final String DEST_FILENAME = "src/List9/payoffs.txt";
     private static final int MAX_PAYOFFS_AMOUNT = 100;
     private static final Wyplata[] payoffs = new Wyplata[MAX_PAYOFFS_AMOUNT];
+    private static final Random rand = new Random();
 
 
     public static void main(String[] args) {
@@ -31,20 +33,22 @@ public class Firma {
 
     private static void insertPayoffs() {
         insertPayoff(new Wyplata());
-        insertPayoff(new Wyplata(525, new KartaPersonelu()));
-        insertPayoff(new Wyplata(723, new KartaPersonelu(43, "Nowak")));
-        insertPayoff(new Wyplata(1001, new KartaKierownika()));
-        insertPayoff(new Wyplata(1080, new KartaKierownika(441, "Kowalski")));
-        insertPayoff(new Wyplata(4500, new KartaDyrektora()));
-        insertPayoff(new Wyplata(5000, new KartaDyrektora(2137, "Pawlak")));
+        insertPayoff(new Wyplata(rand.nextInt(550) + 1, new KartaPersonelu()));
+        insertPayoff(new Wyplata(rand.nextInt(550) + 1, new KartaPersonelu(rand.nextInt(100), "Nowak")));
+        insertPayoff(new Wyplata(rand.nextInt(900) + 100, new KartaKierownika()));
+        insertPayoff(new Wyplata(rand.nextInt(900) + 100, new KartaKierownika(rand.nextInt(900) + 100, "Kowalski")));
+        insertPayoff(new Wyplata(rand.nextInt(9000) + 1000, new KartaDyrektora()));
+        insertPayoff(new Wyplata(rand.nextInt(9000) + 1000, new KartaDyrektora(rand.nextInt(9000) + 1000, "Pawlak")));
     }
 
 
     private static void printPayoffs() {
         System.out.println("Payoffs:");
 
-        for (int i = 0; i < Wyplata.getNumerWyplaty(); i++) {
-            System.out.println(payoffs[i]);
+        for (int i = 0; i <= Wyplata.getNumerWyplaty(); i++) {
+            Wyplata curreentPayoff = payoffs[i];
+
+            if (curreentPayoff != null) System.out.println(i + " " + curreentPayoff);
         }
     }
 
@@ -52,7 +56,7 @@ public class Firma {
     private static int countPayoffsWithManagerCard() {
         int count = 0;
 
-        for (int i = 0; i < Wyplata.getNumerWyplaty(); i++) {
+        for (int i = 0; i <= Wyplata.getNumerWyplaty(); i++) {
             Wyplata currentPayoff = payoffs[i];
 
             if (currentPayoff != null && currentPayoff.getKarta() instanceof KartaKierownika) {
@@ -68,7 +72,7 @@ public class Firma {
         double lowestPayoffValue = Double.MAX_VALUE;
         Wyplata lowestPayoff = null;
 
-        for (int i = 0; i < Wyplata.getNumerWyplaty(); i++) {
+        for (int i = 0; i <= Wyplata.getNumerWyplaty(); i++) {
             Wyplata currentPayoff = payoffs[i];
 
             if (currentPayoff != null && currentPayoff.getKarta() instanceof KartaPersonelu) {
@@ -90,7 +94,7 @@ public class Firma {
             System.out.println("Saving to file...");
             BufferedWriter writer = new BufferedWriter(new FileWriter(DEST_FILENAME));
 
-            for (int i = 0; i < Wyplata.getNumerWyplaty(); i++) {
+            for (int i = 0; i <= Wyplata.getNumerWyplaty(); i++) {
                 Wyplata currentPayoff = payoffs[i];
 
                 if (currentPayoff != null) {

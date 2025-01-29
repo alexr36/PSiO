@@ -1,6 +1,8 @@
 package List9;
 
 public class KartaPersonelu extends KartaPracownika {
+    //  ==  Constructors ===============================================================================================
+
     public KartaPersonelu() {
         super();
     }
@@ -10,6 +12,8 @@ public class KartaPersonelu extends KartaPracownika {
         super(numer, nazwisko);
     }
 
+
+    //  ==  Public methods =============================================================================================
 
     @Override
     public double premia() {
