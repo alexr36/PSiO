@@ -27,7 +27,7 @@ public class Firma {
     private static void insertPayoff(Wyplata payoff) {
         if (Wyplata.getNumerWyplaty() > payoffs.length) return;
 
-        payoffs[Wyplata.getNumerWyplaty()] = payoff;
+        payoffs[Wyplata.getNumerWyplaty() - 1] = payoff;
     }
 
 
@@ -45,10 +45,8 @@ public class Firma {
     private static void printPayoffs() {
         System.out.println("Payoffs:");
 
-        for (int i = 0; i <= Wyplata.getNumerWyplaty(); i++) {
-            Wyplata curreentPayoff = payoffs[i];
-
-            if (curreentPayoff != null) System.out.println(i + " " + curreentPayoff);
+        for (int i = 0; i < Wyplata.getNumerWyplaty(); i++) {
+            System.out.println(payoffs[i]);
         }
     }
 
@@ -56,7 +54,7 @@ public class Firma {
     private static int countPayoffsWithManagerCard() {
         int count = 0;
 
-        for (int i = 0; i <= Wyplata.getNumerWyplaty(); i++) {
+        for (int i = 0; i < Wyplata.getNumerWyplaty(); i++) {
             Wyplata currentPayoff = payoffs[i];
 
             if (currentPayoff != null && currentPayoff.getKarta() instanceof KartaKierownika) {
@@ -72,7 +70,7 @@ public class Firma {
         double lowestPayoffValue = Double.MAX_VALUE;
         Wyplata lowestPayoff = null;
 
-        for (int i = 0; i <= Wyplata.getNumerWyplaty(); i++) {
+        for (int i = 0; i < Wyplata.getNumerWyplaty(); i++) {
             Wyplata currentPayoff = payoffs[i];
 
             if (currentPayoff != null && currentPayoff.getKarta() instanceof KartaPersonelu) {
@@ -94,7 +92,7 @@ public class Firma {
             System.out.println("Saving to file...");
             BufferedWriter writer = new BufferedWriter(new FileWriter(DEST_FILENAME));
 
-            for (int i = 0; i <= Wyplata.getNumerWyplaty(); i++) {
+            for (int i = 0; i < Wyplata.getNumerWyplaty(); i++) {
                 Wyplata currentPayoff = payoffs[i];
 
                 if (currentPayoff != null) {
