@@ -1,0 +1,6 @@
+Payoff id: 1, Salary: 0.0, Worker's card: Name: null, Number: 0
+Payoff id: 2, Salary: 630.0, Worker's card: Name: null, Number: 0
+Payoff id: 3, Salary: 867.6, Worker's card: Name: Nowak, Number: 43
+Payoff id: 4, Salary: 1501.5, Worker's card: Name: null, Number: 0
+Payoff id: 5, Salary: 1620.0, Worker's card: Name: Kowalski, Number: 441
+Payoff id: 6, Salary: 9000.0, Worker's card: Name: null, Number: 0
