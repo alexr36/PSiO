@@ -9,8 +9,8 @@ import java.util.Random;
 public class PieczeDziadek extends Ciasto {
     //  ==  Class fields  ==============================================================================================
 
-    private static final String APPLEPIE_MESSAGE = "Ciasto pieczone przez babcie to szarlotka.";
-    private static final String PLUMCAKE_MESSAGE = "Ciasto pieczone przez babcie to ciasto sliwkowe.";
+    private static final String APPLEPIE_MESSAGE = "Ciasto pieczone przez dziadka to szarlotka.";
+    private static final String PLUMCAKE_MESSAGE = "Ciasto pieczone przez dziadka to ciasto sliwkowe.";
     private static final Random rand = new Random();
     private int whoChoice;
     private int howChoice;
