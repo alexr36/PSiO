@@ -21,6 +21,8 @@ public abstract class Ciasto {
 
 
     public void ustawSzarlotke(Jablko szarlotka, String algorytmInfoJablko) {
+        if (szarlotka == null) return;
+
         this.szarlotka = szarlotka;
         this.algorytmInfoJablko = algorytmInfoJablko;
     }
@@ -32,6 +34,8 @@ public abstract class Ciasto {
 
 
     public void ustawCiastoSliwkowe(Sliwka ciastoSliwkowe, String algorytmInfoSliwka) {
+        if (ciastoSliwkowe == null) return;
+
         this.ciastoSliwkowe = ciastoSliwkowe;
         this.algorytmInfoSliwka = algorytmInfoSliwka;
     }
