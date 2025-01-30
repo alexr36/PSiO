@@ -71,8 +71,7 @@ public class PieczeBabcia extends Ciasto {
         int randomChoice = rand.nextInt(2);
 
         if (randomChoice == 0) return new Kostka();
-        else if (randomChoice == 1) return new Cwiartki();
-        else return null;
+        else return new Cwiartki();
     }
 
 
@@ -80,8 +79,7 @@ public class PieczeBabcia extends Ciasto {
         int randomChoice = rand.nextInt(2);
 
         if (randomChoice == 0) return new Zmiksowane();
-        else if (randomChoice == 1) return new Polowki();
-        else return null;
+        else return new Polowki();
     }
 
 
