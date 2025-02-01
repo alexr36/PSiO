@@ -1,0 +1,105 @@
+package List11.Zad1.Bakers;
+
+import List11.Zad1.Cake.Ciasto;
+import List11.Zad1.Fruits.*;
+import List11.Zad1.Techniques.*;
+
+import java.io.Serializable;
+import java.util.Random;
+
+public class PieczeBabcia extends Ciasto implements Serializable {
+    //  ==  Class fields  ==============================================================================================
+
+    private static final String APPLEPIE_MESSAGE = "Ciasto pieczone przez babcie to szarlotka.";
+    private static final String PLUMCAKE_MESSAGE = "Ciasto pieczone przez babcie to ciasto sliwkowe.";
+    private static final Random rand = new Random();
+
+    private int whoChoice;
+    private int howChoice;
+
+
+    //  ==  Constructors  ==============================================================================================
+
+    public PieczeBabcia(int whoChoice, int howChoice) {
+        this.whoChoice = whoChoice;
+        this.howChoice = howChoice;
+
+        switch (whoChoice) {
+            case 1:
+                handleBaking(new Kostka(), new Zmiksowane());
+                break;
+            case 2:
+                handleBaking(new Cwiartki(), new Polowki());
+                break;
+            default:
+                handleBaking(randomAppleType(), randomPlumType());
+        }
+    }
+
+
+    //  ==  Public methods  ============================================================================================
+
+    @Override
+    public void wyswietlInfo() {
+        switch (whoChoice) {
+            case 1:
+                printTypeOfCake(getAlgorytmInfoJablko());
+                wykonajSzarlotke();
+                break;
+            case 2:
+                printTypeOfCake(getAlgorytmInfoSliwka());
+                wykonajCiastoSliwkowe();
+                break;
+            default:
+                System.out.println("Babcia miala piec ciasto, ale nie wie jak.");
+        }
+    }
+
+
+    //  ==  Private methods  ===========================================================================================
+
+    private void printTypeOfCake(String type) {
+        System.out.println("Babcia piecze ciasto. " + type);
+    }
+
+
+    private void handleBaking(Jablko jablkoType, Sliwka sliwkaType) {
+        ustawSzarlotke(jablkoType, APPLEPIE_MESSAGE);
+        ustawCiastoSliwkowe(sliwkaType, PLUMCAKE_MESSAGE);
+    }
+
+
+    private Jablko randomAppleType() {
+        int randomChoice = rand.nextInt(2);
+
+        if (randomChoice == 0) return new Kostka();
+        else return new Cwiartki();
+    }
+
+
+    private Sliwka randomPlumType() {
+        int randomChoice = rand.nextInt(2);
+
+        if (randomChoice == 0) return new Zmiksowane();
+        else return new Polowki();
+    }
+
+
+    //  ==  Getters and Setters ========================================================================================
+
+    public int getWhoChoice() {
+        return whoChoice;
+    }
+
+    public int getHowChoice() {
+        return howChoice;
+    }
+
+    public void setWhoChoice(int whoChoice) {
+        this.whoChoice = whoChoice;
+    }
+
+    public void setHowChoice(int howChoice) {
+        this.howChoice = howChoice;
+    }
+}
