@@ -115,8 +115,7 @@ public class Zegar implements Subject {
 
         this.secondsFromMidnight = secondsFromMidnight;
         System.out.println("\nUstawiono czas na: " + secondsFromMidnight + "s");
-        Wypisz();
-        notifyObservers();
+        changedState();
     }
 
     public void setObservers(ArrayList<Observer> observers) {
