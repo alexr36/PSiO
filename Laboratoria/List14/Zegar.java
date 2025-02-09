@@ -34,6 +34,7 @@ public class Zegar implements Subject {
     }
 
 
+    //    Increments time by 1s
     public void Tykniecie() {
         System.out.println("\nZegar tyka");
         secondsFromMidnight++;
