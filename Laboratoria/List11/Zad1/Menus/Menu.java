@@ -163,6 +163,7 @@ public class Menu {
             babcie = (PieczeBabcia[]) objectInputStream.readObject();
             dziadkowie = (PieczeDziadek[]) objectInputStream.readObject();
 
+            objectInputStream.close();
             printInfos();
         }
         catch (Exception e) {
