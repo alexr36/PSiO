@@ -14,4 +14,4 @@ PSiO/
 ```
 In `Cwiczenia/` directory there are solutions for tasks presented during practicals.
 In `Laboratoria/` directory there are solutions for tasks presented during laboratory classes.
-In both these directories there can be found directory `Listy` where are instructions for the tasks.
+In both these directories there can be found directory `Listy/` where are instructions for the tasks.
