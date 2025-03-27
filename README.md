@@ -1,4 +1,5 @@
 # Programowanie Strukturalne i Obiektowe
+(Structured and Object-Oriented Programming)
 
 ## Used language
 All programs have been written using Java.
