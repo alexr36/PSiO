@@ -23,9 +23,10 @@ Tables contain execution time in nanoseconds.
 
 ### Plots
 1. Try-catch
-   
+   ![Try-catch execution time bar diagram](https://github.com/alexr36/PSiO/blob/main/Laboratoria/List11/Zad2/plots/try_catch_bar.png)
+
 2. Throws
-   
+   ![Throws execution time bar diagram](https://github.com/alexr36/PSiO/blob/main/Laboratoria/List11/Zad2/plots/throws_bar.png)
 
 
 ## Conclusions
