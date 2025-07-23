@@ -7,23 +7,23 @@
 //    podnieść, dlatego w razie potrzeby możesz je dodawać!
 
 // Kod w odpowiedniej kolejności z uzupełnionymi nawiasami:
-class Układanka {								// Fragment 3.
+class Układanka {					 // Fragment 3.
 	public static void main(String[] args) {
-		int x = 3;							// Fragment 5.
+		int x = 3;				 // Fragment 5.
 		
-		while (x > 0) {							// Fragment 7.
-			if (x > 2) {						// Fragment 4.
+		while (x > 0) {				 // Fragment 7.
+			if (x > 2) {			 // Fragment 4.
 				System.out.print("a");
 			}
 
-			x = x - 1;						// Fragment 6.
+			x = x - 1;			 // Fragment 6.
 			System.out.print("-");
 
-			if (x == 2) {						// Fragment 2.
+			if (x == 2) {			 // Fragment 2.
 				System.out.print("b c");
 			}
 
-			if (x == 1) {						// Fragment 1.
+			if (x == 1) {			 // Fragment 1.
 				System.out.print("d");
 				x = x - 1;
 			}
