@@ -91,7 +91,7 @@ public class Main {
     //  --  ZADANIE 3   ------------------------------------------------------------------------------------------------
 
     //  Mnożenie macierzy
-    public static int[][] multipleMatrices(int[][] matrix_a, int[][] matrix_b) {
+    public static int[][] multiplyMatrices(int[][] matrix_a, int[][] matrix_b) {
         int[][] result = new int[matrix_a.length][matrix_b[0].length];
         int sum;
 
@@ -174,7 +174,7 @@ public class Main {
         int[][] test_matrix_b = {{3, 1}, {2, 1}, {1, 0}};
 
         System.out.println("A x B = ");
-        printMatrix(multipleMatrices(test_matrix_a, test_matrix_b));
+        printMatrix(multiplyMatrices(test_matrix_a, test_matrix_b));
 
         //  ZADANIE 4
         System.out.println("\n######### ZADANIE 4 #########");
