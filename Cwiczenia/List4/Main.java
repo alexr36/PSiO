@@ -3,32 +3,30 @@ package List4;
 import java.util.Random;
 
 public class Main {
-    //  --  ZADANIE 1   ------------------------------------------------------------------------------------------------
+    //  --  TASK 1   -----------------------------------------------------------
 
     private static int[] ints = new int[100];
     private static Random rand = new Random();
 
-    //  Wypełnianie tablicy wartoścami losowymi
+    //  Filling given array with random values
     public static void fillArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
             array[i] = rand.nextInt();
         }
     }
 
-    //  Znajdowanie maksymalnej wartości w tablicy
+    //  Finding maximum value in given array
     public static int findMax(int[] array) {
         int max = array[0];
 
         for (int i = 1; i < array.length; i++) {
-            if (max < array[i]) {
-                max = array[i];
-            }
+            if (max < array[i]) max = array[i];
         }
 
         return max;
     }
 
-    //  Znajdowanie minimalnej wartosci w tablicy
+    //  Finding minimum value in given array
     public static int findMin(int[] array) {
         int min = array[0];
 
@@ -41,7 +39,7 @@ public class Main {
         return min;
     }
 
-    //  Obliczanie średniej wartości elementu tablicy
+    //  Calculating average value of elements in given array
     public static double calculateAverage(int[] array) {
         int sum = 0;
 
@@ -52,32 +50,35 @@ public class Main {
         return (double) sum / array.length;
     }
 
-    //  Wyodrębnienie parzystych elementów tablicy
+    //  Extracting even values from given array
     public static int[] extractEvens(int[] array) {
-        //  Obliczenie długości tablicy wynikowej
+        //  Calculate the resultant array's length
         int result_length = 0;
 
         for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 == 0) {
-                result_length++;
-            }
+            if (isEven(array[i])) result_length++;
         }
 
         int[] result = new int[result_length];
 
-        //  Przepisanie elementów parzystych do tablicy wynikowej
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < result_length; j++) {
-                if (array[i] % 2 == 0) {
-                    result[j] = array[i];
-                }
+        //  Move elements to the resultant array
+        int i = 0;
+        int j = 0;
+        while (j < result_length && i < array.length) {
+            if (isEven(array[i])) { 
+                result[j] = array[i]; 
+                j++;
             }
+            i++;
         }
-
+        
         return result;
     }
 
-    //  Wyświetlanie tablicy
+
+    private static boolean isEven(int num) { return num % 2 == 0; } 
+
+    //  Showing given array
     public static void printArray(int[] array) {
         System.out.print("Array: [");
 
@@ -88,18 +89,23 @@ public class Main {
         System.out.println("]");
     }
 
-    //  --  ZADANIE 3   ------------------------------------------------------------------------------------------------
+    //  --  TASK 3   -----------------------------------------------------------
 
-    //  Mnożenie macierzy
+    //  Multiplying matrices
     public static int[][] multiplyMatrices(int[][] matrix_a, int[][] matrix_b) {
         int[][] result = new int[matrix_a.length][matrix_b[0].length];
-        int sum;
 
+        if (matrix_a[0].length != matrix_b.length) {
+            fillMatrix(result);
+            return result;
+        }
+
+        int sum;
         for (int i = 0; i < matrix_a.length; i++) {
-            for (int j = 0; j < matrix_b[0].length; j++) {
+            for (int j = 0; j < matrix_b[i].length; j++) {
                 sum = 0;
 
-                for (int k = 0; k < matrix_a[0].length; k++) {
+                for (int k = 0; k < matrix_a[i].length; k++) {
                     sum += matrix_a[i][k] * matrix_b[k][j];
                 }
 
@@ -110,7 +116,7 @@ public class Main {
         return result;
     }
 
-    //  Wyświetlanie macierzy
+    //  Showing given matrix
     public static void printMatrix(int[][] matrix) {
         System.out.println("Matrix: ");
 
@@ -125,11 +131,17 @@ public class Main {
         }
     }
 
-    //  --  ZADANIE 4   ------------------------------------------------------------------------------------------------
+    //  --  TASK 4   -----------------------------------------------------------
 
-    private static int[][] customMatrix = {new int[4], new int[2], new int[3], new int[2], new int[5]};
+    private static int[][] customMatrix = {
+        new int[4],
+        new int[2], 
+        new int[3],
+        new int[2], 
+        new int[5]
+    };
 
-    //  Znajdowanie maksymalnej wartości w macierzy
+    //  Finding maximum value in given matrix
     public static int findMax(int[][] matrix) {
         int max = matrix[0][0];
 
@@ -144,7 +156,7 @@ public class Main {
         return max;
     }
 
-    //  Wypełnianie macierzy wartościami losowymi
+    //  Filling given matrix with random values
     public static void fillMatrix(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
@@ -153,10 +165,10 @@ public class Main {
         }
     }
 
-    //  --  Testy   ----------------------------------------------------------------------------------------------------
+    //  --  Tests   ------------------------------------------------------------
 
     public static void main(String[] args) {
-        //  ZADANIE 1
+        //  TASK 1
         System.out.println("######### ZADANIE 1 #########");
 
         fillArray(ints);
@@ -167,16 +179,23 @@ public class Main {
         System.out.println("Avg: " + calculateAverage(ints));
         printArray(extractEvens(ints));
 
-        //  ZADANIE 3
+        //  TASK 3
         System.out.println("\n######### ZADANIE 3 #########");
 
-        int[][] test_matrix_a = {{1, 0, 2}, {-1, 3, 1}};
-        int[][] test_matrix_b = {{3, 1}, {2, 1}, {1, 0}};
+        int[][] test_matrix_a = {
+            {1, 0, 2}, 
+            {-1, 3, 1}
+        };
+        int[][] test_matrix_b = {
+            {3, 1, 1, 2}, 
+            {2, 1, 1, 2}, 
+            {1, 0, 1, 2}
+        };
 
         System.out.println("A x B = ");
         printMatrix(multiplyMatrices(test_matrix_a, test_matrix_b));
 
-        //  ZADANIE 4
+        //  TASK 4
         System.out.println("\n######### ZADANIE 4 #########");
         fillMatrix(customMatrix);
         printMatrix(customMatrix);
