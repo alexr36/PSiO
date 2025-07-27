@@ -133,7 +133,7 @@ public class Main {
 
     //  --  TASK 4   -----------------------------------------------------------
 
-    private static int[][] customMatrix = {
+    private static int[][] custom_matrix = {
         new int[4],
         new int[2], 
         new int[3],
@@ -197,9 +197,9 @@ public class Main {
 
         //  TASK 4
         System.out.println("\n######### ZADANIE 4 #########");
-        fillMatrix(customMatrix);
-        printMatrix(customMatrix);
+        fillMatrix(custom_matrix);
+        printMatrix(custom_matrix);
 
-        System.out.println("Max: " + findMax(customMatrix));
+        System.out.println("Max: " + findMax(custom_matrix));
     }
 }
