@@ -1,15 +1,15 @@
 package List6;
 
 public abstract class Animal {
-    //  Stałe pola
+    //  Constant fields
     private static final String DEFAULT_NAME_UNKNOWN = "Unknown Animal";
 
-    //  Zmienne pola
+    //  Variable fields
     private String name;
     private int age;
     private boolean isVaccinated;
 
-    //  Konstruktory
+    //  Constructors
     public Animal() {
         name = DEFAULT_NAME_UNKNOWN;
         age = Integer.MIN_VALUE;
@@ -35,7 +35,7 @@ public abstract class Animal {
 
     public abstract void makeSound();
 
-    //  --  Gettery i settery   ----------------------------------------------------------------------------------------
+    //  --  Getters and setters   ----------------------------------------------
 
     public String getName() {
         return name;

@@ -1,13 +1,13 @@
 package List6;
 
 public abstract class Dog extends Animal {
-    //  Stałe pola
+    //  Constant fields
     private static final String DEFAULT_DOG_NAME = "Dog";
 
-    //  Zmienne pola
+    //  Variable fields
     private boolean isAngry;
 
-    //  Konstruktory
+    //  Constructors
     public Dog() {
         super();
         setName(DEFAULT_DOG_NAME);
@@ -36,7 +36,7 @@ public abstract class Dog extends Animal {
         else System.out.println("Woof woof...");
     }
 
-    //  --  Gettery i settery   ----------------------------------------------------------------------------------------
+    //  --  Getters and setters  -----------------------------------------------
 
     public boolean isAngry() {
         return isAngry;

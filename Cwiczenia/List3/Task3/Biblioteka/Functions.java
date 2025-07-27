@@ -4,7 +4,7 @@ public class Functions {
 
     //  sin(x)
     public static double sin(double x, double n) {
-        if (n < 0) return Integer.MIN_VALUE;    //  Liczba wyrazów ciągu nie może być < 0
+        if (n < 0) return Integer.MIN_VALUE;    //  Number of terms cannot be < 0
 
         double sum = x;
         double numerator = x;
@@ -27,7 +27,7 @@ public class Functions {
 
     //  cos(x)
     public static double cos(double x, double n) {
-        if (n < 0) return Integer.MIN_VALUE;    //  Liczba wyrazów ciągu nie może być < 0
+        if (n < 0) return Integer.MIN_VALUE;    //  Number of terms cannot be < 0
 
         double sum = 1;
         double numerator = 1;
@@ -50,7 +50,7 @@ public class Functions {
 
     // e^x
     public static double ex(double x, double n) {
-        if (n < 0) return Integer.MIN_VALUE;    //  Liczba wyrazów ciągu nie może być < 0
+        if (n < 0) return Integer.MIN_VALUE;    //  Number of terms cannot be < 0
 
         double sum = 1;
         double term = 1;

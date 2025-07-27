@@ -1,13 +1,13 @@
 package List6;
 
 public class Labrador extends Dog {
-    //  Stałe pola
+    //  Constant fields
     private static final String DEFAULT_LABRADOR_NAME = "Labrador";
 
-    //  Zmienne pola
+    //  Variable fields
     private double height;
 
-    //  Konstruktory
+    //  Constructors
     public Labrador() {
         super();
         setName(DEFAULT_LABRADOR_NAME);
@@ -31,7 +31,7 @@ public class Labrador extends Dog {
         super.makeSound();
     }
 
-    //  --  Gettery i settery   ----------------------------------------------------------------------------------------
+    //  --  Getters and setters   ----------------------------------------------
 
     public double getHeight() {
         return height;

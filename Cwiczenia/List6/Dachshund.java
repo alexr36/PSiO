@@ -1,13 +1,13 @@
 package List6;
 
 public class Dachshund extends Dog {
-    //  Stałe pola
+    //  Constant fields
     private static final String DEFAULT_DACHSHUND_NAME = "Dachshund";
 
-    //  Zmienne pola
+    //  Variable fields
     private double length;
 
-    //  Konstruktory
+    //  Constructors
     public Dachshund() {
         super();
         setName(DEFAULT_DACHSHUND_NAME);
@@ -31,7 +31,7 @@ public class Dachshund extends Dog {
         super.makeSound();
     }
 
-    //  --  Gettery i settery   ----------------------------------------------------------------------------------------
+    //  --  Getters and setters   ----------------------------------------------
 
     public double getLength() {
         return length;

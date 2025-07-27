@@ -7,7 +7,7 @@ public class Main {
     private static final int UPPER_RANGE_VALUE = 10;
     private static final int DEFAULT_SIZE = 1;
 
-    //  --  Metody pomocnicze   ----------------------------------------------------------------------------------------
+    //  --  Aux methods   ------------------------------------------------------
 
     public static void fillArray(int[] arr, int upper_bound) {
         for (int i = 0; i < arr.length; i++) {
@@ -48,14 +48,14 @@ public class Main {
         return matrix;
     }
 
-    //  Zamiana elementów miejscami w tablicy
+    //  Swapping elements in given array
     private static void swap(int[] array, int i, int j) {
         int temp = array[i];
         array[i] = array[j];
         array[j] = temp;
     }
 
-    //  Zamiana elementów miejscami w macierzy
+    //  Swapping elements in given matrix
     private static void swap(int[][] matrix, int row1, int col1, int row2, int col2) {
         int temp = matrix[row1][col1];
         matrix[row1][col1] = matrix[row2][col2];
@@ -86,7 +86,7 @@ public class Main {
         }
     }
 
-    //  --  ZADANIE 1   ------------------------------------------------------------------------------------------------
+    //  --  TASK 1   -----------------------------------------------------------
 
     public static void bubbleSortOneDimensional(int[] array) {
         for (int i = 0; i < array.length - 1; i++) {
@@ -98,7 +98,7 @@ public class Main {
         }
     }
 
-    //  --  ZADANIE 2   ------------------------------------------------------------------------------------------------
+    //  --  TASK 2   -----------------------------------------------------------
 
     public static void bubbleSortTwoDimensionalRows(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
@@ -106,7 +106,7 @@ public class Main {
         }
     }
 
-    //  --  ZADANIE 3   ------------------------------------------------------------------------------------------------
+    //  --  TASK 3   -----------------------------------------------------------
 
     public static int countDivisibilities(int[] array_a, int[] array_b) {
         int count;
@@ -132,7 +132,7 @@ public class Main {
         return a % b == 0;
     }
 
-    //  --  ZADANIE 4   ------------------------------------------------------------------------------------------------
+    //  --  TASK 4   -----------------------------------------------------------
 
     public static void bubbleSortTwoDimensionalCols(int[][] matrix) {
         for (int i = 0; i < matrix[0].length; i++) {
@@ -146,7 +146,7 @@ public class Main {
         }
     }
 
-    //  --  ZADANIE 5   ------------------------------------------------------------------------------------------------
+    //  --  TASK 5   -----------------------------------------------------------
 
     public static void fillCustomMatrix(int[][] matrix, int upper_bound) {
         for (int i = 0; i < matrix.length; i++) {
@@ -154,13 +154,13 @@ public class Main {
         }
     }
 
-    //  --  ZADANIE 6   ------------------------------------------------------------------------------------------------
+    //  --  TASK 6   -----------------------------------------------------------
 
     public static int[][] generateMatrixForRelation() {
         return createMatrix(5, 5, 2, 6);
     }
 
-    //  Dla każdego x: (x, x) należy do relacji
+    //  For every x: (x, x) belongs to the relation
     public static boolean isReflexive(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
             if (matrix[i][i] != 1) return false;
@@ -169,7 +169,7 @@ public class Main {
         return true;
     }
 
-    //  (x, y) należy do relacji => (y, x) należy do relacji
+    //  (x, y) belongs to the relation => (y, x) belongs to the relation
     public static boolean isSymmetric(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
@@ -182,7 +182,7 @@ public class Main {
         return true;
     }
 
-    //  Dla każdego x: (x, x) nie należy do relacji
+    //  For every x: (x, x) doesn't belong to the relation
     public static boolean isAntireflexive(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
             if (matrix[i][i] != 0) return false;
@@ -191,7 +191,7 @@ public class Main {
         return true;
     }
 
-    //  (x, y) należy do relacji => (y, x) nie należy do relacji
+    //  (x, y) belongs to the relation => (y, x) doesn't belong to the relation
     public static boolean isAsymmetric(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
@@ -204,18 +204,18 @@ public class Main {
         return true;
     }
 
-    //  --  Testy   ----------------------------------------------------------------------------------------------------
+    //  --  Tests   ------------------------------------------------------------
 
     public static void test() {
-        //  ZADANIE 1
-        System.out.println("################## ZADANIE 1 ##################");
+        //  TASK 1
+        System.out.println("################## TASK 1 ##################");
         int[] array_task1 = createArray(10, UPPER_RANGE_VALUE);
         printArray(array_task1);
         bubbleSortOneDimensional(array_task1);
         printArray(array_task1);
 
-        //  ZADANIE 2
-        System.out.println("\n################## ZADANIE 2 ##################");
+        //  TASK 2
+        System.out.println("\n################## TASK 2 ##################");
         int[][] matrix_task2 = createMatrix(10, 20, UPPER_RANGE_VALUE, 2);
         printMatrix(matrix_task2);
 
@@ -224,8 +224,8 @@ public class Main {
         bubbleSortTwoDimensionalRows(matrix_task2);
         printMatrix(matrix_task2);
 
-        //  ZADANIE 3
-        System.out.println("\n################## ZADANIE 3 ##################");
+        //  TASK 3
+        System.out.println("\n################## TASK 3 ##################");
         int[] array_1_task3 = createArray(10, UPPER_RANGE_VALUE);
         int[] array_2_task3 = createArray(10, UPPER_RANGE_VALUE);
         printArray(array_1_task3);
@@ -233,8 +233,8 @@ public class Main {
 
         System.out.println("Divisibilities: " + countDivisibilities(array_1_task3, array_2_task3));
 
-        //  ZADANIE 4
-        System.out.println("\n################## ZADANIE 4 ##################");
+        //  TASK 4
+        System.out.println("\n################## TASK 4 ##################");
         int[][] matrix_task4 = createMatrix(10, 20, UPPER_RANGE_VALUE, 4);
         printMatrix(matrix_task4);
 
@@ -243,8 +243,8 @@ public class Main {
         bubbleSortTwoDimensionalCols(matrix_task4);
         printMatrix(matrix_task4);
 
-        //  ZADANIE 5
-        System.out.println("\n################## ZADANIE 5 ##################");
+        //  TASK 5
+        System.out.println("\n################## TASK 5 ##################");
         int[][] matrix_task5 = {new int[4], new int[2], new int[3], new int[2], new int[5]};
         fillCustomMatrix(matrix_task5, UPPER_RANGE_VALUE);
         printMatrix(matrix_task5);
@@ -252,8 +252,8 @@ public class Main {
         bubbleSortTwoDimensionalRows(matrix_task5);
         printMatrix(matrix_task5);
 
-        //  ZADANIE 6
-        System.out.println("\n################## ZADANIE 6 ##################");
+        //  TASK 6
+        System.out.println("\n################## TASK 6 ##################");
         int[][] matrix_task6 = generateMatrixForRelation();
 
         System.out.println("Generated relation: ");

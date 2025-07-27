@@ -5,19 +5,19 @@ public class Point {
     private double x;
     private double y;
 
-    //  Konstruktor domyślny
+    //  Default constructor
     public Point() {
         x = DEFAULT_POINT_VALUE;
         y = -DEFAULT_POINT_VALUE;
     }
 
-    //  Konstruktor przeciążony
+    //  Overloaded constructor
     public Point(double x, double y) {
         this.x = x;
         this.y = y;
     }
 
-    //  --  Gettery i settery   ----------------------------------------------------------------------------------------
+    //  --  Getters and setters   ----------------------------------------------
 
     public double getX() {
         return x;

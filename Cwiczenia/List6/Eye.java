@@ -1,14 +1,14 @@
 package List6;
 
 public class Eye {
-    //  Stałe pola
+    //  Constant fields
     private static final String DEFAULT_EYE_COLOR = "Black";
     private final Spider owner;
 
-    //  Zmienne pola
+    //  Variable fields
     private String color;
 
-    //  Konstruktory
+    //  Constructors
     public Eye(Spider owner) {
         color = DEFAULT_EYE_COLOR;
         this.owner = owner;
@@ -26,7 +26,7 @@ public class Eye {
         owner.printInfo();
     }
 
-    //  --  Gettery i settery   ----------------------------------------------------------------------------------------
+    //  --  Getters and setters   ----------------------------------------------
 
     public Spider getOwner() {
         return owner;

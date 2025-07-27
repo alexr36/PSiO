@@ -4,13 +4,13 @@ public class Rectangle {
     private Point point_a;
     private Point point_b;
 
-    //  Konstruktor domyślny
+    //  Default constructor
     public Rectangle() {                    //  Pa(1; -1), Pb(-1; 1)
         point_a = new Point();
         point_b = new Point(-1, 1);
     }
 
-    //  Konstruktor przeciążony
+    //  Overloaded constructor
     public Rectangle(double x1, double y1, double x2, double y2) {
         if (validateCoordinates(x1, y1) && validateCoordinates(x2, y2)) {
             this.point_a = new Point(x1, y1);
@@ -35,7 +35,7 @@ public class Rectangle {
         return a != b;
     }
 
-    //  --  Gettery i settery   ----------------------------------------------------------------------------------------
+    //  --  Getters and setters   ----------------------------------------------
 
     public Point getPoint_a() {
         return point_a;

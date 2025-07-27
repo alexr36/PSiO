@@ -1,10 +1,10 @@
 package List6;
 
 public class Vet {
-    //  Zmienne pola
+    //  Constants
     private boolean isBitten;
 
-    //  Konstruktory
+    //  Constructors
     public Vet() {
         isBitten = false;
     }
@@ -29,7 +29,7 @@ public class Vet {
         System.out.println("Was bitten: " + (isBitten ? "Bitten" : "Not bitten"));
     }
 
-    //  --  Gettery i settery   ----------------------------------------------------------------------------------------
+    //  --  Getters and setters   ----------------------------------------------
 
     public boolean isBitten() {
         return isBitten;

@@ -27,7 +27,7 @@ public class Histogram {
         }
     }
 
-    //  Wyświetlanie częstości wystąpienia każdego elementu
+    //  Printing frequency of occurance of each element
     public void printHistogram() {
         for (int i = 0; i < MAX_MATRIX_VALUE + 1; i++) {
             int appearances = countAppearances(i);
@@ -43,7 +43,7 @@ public class Histogram {
         printArray(collectElementsOfFrequencyHigherThan(T));
     }
 
-    //  ==  Metody pomocnicze  =========================================================================================
+    //  ==  Aux methods  =======================================================
 
     private void addToMostFrequent(int value, int[] result) {
         if (most_frequent_elements_count < MAX_MATRIX_VALUE) {
@@ -83,7 +83,7 @@ public class Histogram {
         return result;
     }
 
-    //  Zebranie czestości wystąpień dla każdego elementu w tablicę
+    //  Gathering frequency of occurance of each element in the matrix
     private int[] getFrequencies() {
         int[] frequencies = new int[matrix.length];
 
@@ -106,7 +106,7 @@ public class Histogram {
         return max_value;
     }
 
-    //  Wyliczanie elementu o danej częstości
+    //  Calculating frequency of occurance of elements
     private int countElementsOfFrequency(int frequency) {
         int count = 0;
 
@@ -119,7 +119,8 @@ public class Histogram {
         return count;
     }
 
-    //  Wyliczanie liczby wystąpień danej wartości w histogramie o częstości większej niż zdana
+    //  Calculating number of occurances of each value in histogram 
+    //  with frequency higher than given one
     private int countElementsOfFrequencyHigherThan(int frequency) {
         int count = 0;
 
@@ -132,7 +133,7 @@ public class Histogram {
         return count;
     }
 
-    //  Wyliczanie liczby wystąpień danej wartości w histogramie
+    //  Printing number of occurances of each value in histogram
     private int countAppearances(int sought_value) {
         int count = 0;
 
@@ -147,7 +148,7 @@ public class Histogram {
         return count;
     }
 
-    //  Wypełnianie macierzy wartościami z przedziału [0; 255]
+    //  Filling matrix with values from range [0; 255]
     private void fillMatrix() {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
@@ -164,7 +165,7 @@ public class Histogram {
         }
     }
 
-    //  ==  Gettery i settery  =========================================================================================
+    //  ==  Getters and setters  ===============================================
 
     public int[][] getMatrix() {
         return matrix;

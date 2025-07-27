@@ -1,15 +1,15 @@
 package List6;
 
 public class Spider extends Animal {
-    //  Stałe pola
+    //  Constant fields
     private static final String DEFAULT_SPIDER_NAME = "Spider";
     private static final int MAX_EYES_COUNT = 8;
 
-    //  Zmienne pola
+    //  Variable fields
     private int eyes_count;
     private Eye[] eyes = new Eye[MAX_EYES_COUNT];
 
-    //  Konstruktory
+    //  Constructors
     public Spider() {
         super();
         eyes_count = 0;
@@ -51,7 +51,7 @@ public class Spider extends Animal {
         System.out.println("Hiss...");
     }
 
-    //  --  Gettery i settery   ----------------------------------------------------------------------------------------
+    //  --  Getters and setters  -----------------------------------------------
 
     public int getEyes_count() {
         return eyes_count;
