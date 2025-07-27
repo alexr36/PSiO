@@ -6,6 +6,7 @@ public class Main {
     private static final Random rand = new Random();
     private static final int UPPER_RANGE_VALUE = 10;
     private static final int DEFAULT_SIZE = 1;
+    private static final int ARRAY_ELEMENTS_NUM = 10;
 
     //  --  Aux methods   ------------------------------------------------------
 
@@ -209,14 +210,14 @@ public class Main {
     public static void test() {
         //  TASK 1
         System.out.println("################## TASK 1 ##################");
-        int[] array_task1 = createArray(10, UPPER_RANGE_VALUE);
+        int[] array_task1 = createArray(ARRAY_ELEMENTS_NUM, UPPER_RANGE_VALUE);
         printArray(array_task1);
         bubbleSortOneDimensional(array_task1);
         printArray(array_task1);
 
         //  TASK 2
         System.out.println("\n################## TASK 2 ##################");
-        int[][] matrix_task2 = createMatrix(10, 20, UPPER_RANGE_VALUE, 2);
+        int[][] matrix_task2 = createMatrix(ARRAY_ELEMENTS_NUM, ARRAY_ELEMENTS_NUM * 2, UPPER_RANGE_VALUE, 2);
         printMatrix(matrix_task2);
 
         System.out.println();
@@ -226,8 +227,8 @@ public class Main {
 
         //  TASK 3
         System.out.println("\n################## TASK 3 ##################");
-        int[] array_1_task3 = createArray(10, UPPER_RANGE_VALUE);
-        int[] array_2_task3 = createArray(10, UPPER_RANGE_VALUE);
+        int[] array_1_task3 = createArray(ARRAY_ELEMENTS_NUM, UPPER_RANGE_VALUE);
+        int[] array_2_task3 = createArray(ARRAY_ELEMENTS_NUM, UPPER_RANGE_VALUE);
         printArray(array_1_task3);
         printArray(array_2_task3);
 
@@ -235,7 +236,7 @@ public class Main {
 
         //  TASK 4
         System.out.println("\n################## TASK 4 ##################");
-        int[][] matrix_task4 = createMatrix(10, 20, UPPER_RANGE_VALUE, 4);
+        int[][] matrix_task4 = createMatrix(ARRAY_ELEMENTS_NUM, ARRAY_ELEMENTS_NUM * 2, UPPER_RANGE_VALUE, 4);
         printMatrix(matrix_task4);
 
         System.out.println();
@@ -245,7 +246,13 @@ public class Main {
 
         //  TASK 5
         System.out.println("\n################## TASK 5 ##################");
-        int[][] matrix_task5 = {new int[4], new int[2], new int[3], new int[2], new int[5]};
+        int[][] matrix_task5 = {
+            new int[4],
+            new int[2], 
+            new int[3], 
+            new int[2], 
+            new int[5]
+        };
         fillCustomMatrix(matrix_task5, UPPER_RANGE_VALUE);
         printMatrix(matrix_task5);
 
