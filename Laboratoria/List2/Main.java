@@ -25,19 +25,19 @@ public class Main {
         switch (choice) {
             case 1:
                 side = 2;
-                handleChocie(side, side);
+                handleChoice(side, side);
                 break;
             case 2:
                 System.out.print("Enter side length: ");
                 side = scanner.nextInt();
                 if (side < 0) break;
 
-                handleChocie(side, side);
+                handleChoice(side, side);
                 break;
             case 3:
                 int side_a = 4;
                 int side_b = 16;
-                handleChocie(side_a, side_b);
+                handleChoice(side_a, side_b);
                 break;
             default:
                 System.out.println("How did we even get here?");
@@ -50,7 +50,7 @@ public class Main {
 
     private static double calculateDiagonal(int side_a, int side_b) { return Math.sqrt(Math.pow(side_a, 2) + Math.pow(side_b, 2)); }
 
-    private static void handleChocie(int side_a, int side_b) {
+    private static void handleChoice(int side_a, int side_b) {
         printResult(side_a, side_b, calculateArea(side_a, side_b), calculatePerimeter(side_a, side_b), calculateDiagonal(side_a, side_b));
     }
 
