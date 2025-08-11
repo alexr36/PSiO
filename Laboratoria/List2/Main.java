@@ -30,9 +30,7 @@ public class Main {
             case 2:
                 System.out.print("Enter side length: ");
                 side = scanner.nextInt();
-                if (side < 0) break;
-
-                handleChoice(side, side);
+                if (side >= 0) handleChoice(side, side);
                 break;
             case 3:
                 int side_a = 4;
